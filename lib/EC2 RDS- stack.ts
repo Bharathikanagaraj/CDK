@@ -154,20 +154,20 @@ export class EC2RDSStack extends cdk.Stack {
     
     //...........................................................................................................
     //RDS creation
-    const instance = new rds.DatabaseInstance(this, 'rds', {
-      engine: rds.DatabaseInstanceEngine.mysql({ version:rds.MysqlEngineVersion.VER_8_0_25 }),
+    // const instance = new rds.DatabaseInstance(this, 'rds', {
+    //   engine: rds.DatabaseInstanceEngine.mysql({ version:rds.MysqlEngineVersion.VER_8_0_25 }),
       
-      instanceType: ec2.InstanceType.of(ec2.InstanceClass.BURSTABLE3, ec2.InstanceSize.SMALL),
-      credentials: rds.Credentials.fromGeneratedSecret('abcdef'), // Optional - will default to 'admin' username and generated password
-      vpc:vpc,
-      databaseName:'RDSDB',
-      vpcSubnets: {
-        subnetType: ec2.SubnetType.PRIVATE_ISOLATED
-      },
-      instanceIdentifier:'my-rds',  
-      securityGroups: [securitygroup1],
-      removalPolicy: cdk.RemovalPolicy.DESTROY,    
-    });
+    //   instanceType: ec2.InstanceType.of(ec2.InstanceClass.BURSTABLE3, ec2.InstanceSize.SMALL),
+    //   credentials: rds.Credentials.fromGeneratedSecret('abcdef'), // Optional - will default to 'admin' username and generated password
+    //   vpc:vpc,
+    //   databaseName:'RDSDB',
+    //   vpcSubnets: {
+    //     subnetType: ec2.SubnetType.PRIVATE_ISOLATED
+    //   },
+    //   instanceIdentifier:'my-rds',  
+    //   securityGroups: [securitygroup1],
+    //   removalPolicy: cdk.RemovalPolicy.DESTROY,    
+    // });
     //...........................................................................................................
     
     //BationHost creation
